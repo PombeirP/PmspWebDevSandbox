@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>My ASP.NET Web Page - @Page.Title</title>
+        <title>NetFlix - @Page.Title</title>
         <link href="@Href("~/Styles/Site.css")" rel="stylesheet" />
         <link href="@Href("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
     </head>
     <body>
         <div id="page">
             <div id="header">
-                <p class="site-title">My ASP.NET Web Page</p>
+                <p class="site-title">NetFlix</p>
                 <div id="login">
                     @if (WebSecurity.IsAuthenticated) {
                         <p>
@@ -34,7 +34,7 @@
                     @RenderBody()
                 </div>
                 <div id="footer">
-                    &copy; @DateTime.Now.Year - My ASP.NET Web Page
+                    &copy; @DateTime.Now.Year - Pedro Pombeiro
                 </div>
             </div>
         </div>
