@@ -10,7 +10,7 @@ namespace NetFlixFrontEnd.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewBag.Message = "Top titles at NetFlix";
 
             return View();
         }
