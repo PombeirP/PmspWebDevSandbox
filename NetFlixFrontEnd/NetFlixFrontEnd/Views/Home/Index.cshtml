@@ -1,9 +1,10 @@
-﻿@{
+﻿@using NetFlixFrontEnd.NetFlixService
+@{
     ViewBag.Title = "Home Page";
 }
 <h2>@ViewBag.Message</h2>
 <p>
-    @foreach (NetFlixFrontEnd.NetFlixService.Title movie in Model)
+    @foreach (Title movie in Model)
     {
         <p>
             <a href="@movie.Url">
@@ -15,7 +16,7 @@
                 @Html.Raw("Rating: ") 
                 @for (int i = 0; i < movie.AverageRating; ++i)
                 {
-                    @Html.Raw("*") 
+                    @Html.Raw("*")
                 }
             </span>
         </p>
