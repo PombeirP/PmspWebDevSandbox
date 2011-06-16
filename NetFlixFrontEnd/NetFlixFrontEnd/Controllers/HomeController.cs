@@ -12,7 +12,16 @@ namespace NetFlixFrontEnd.Controllers
         {
             ViewBag.Message = "Top titles at NetFlix";
 
-            return View();
+            return View(GetTopTitles());
+        }
+
+        public IQueryable<NetFlixService.Title> GetTopTitles()
+        {
+            var netFlix = new NetFlixService.NetflixCatalog(new Uri(@"http://odata.netflix.com/v2/Catalog"));
+
+            return (from title in netFlix.Titles
+                    orderby title.AverageRating descending
+                    select title).Take(5);
         }
 
         public ActionResult About()

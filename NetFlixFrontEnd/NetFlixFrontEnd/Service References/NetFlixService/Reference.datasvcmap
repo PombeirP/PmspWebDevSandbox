@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ff92476e-5f5c-4daf-bed7-9fd688090228" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://odata.netflix.com/v2/Catalog" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="df86c586-685f-45fd-99a3-f533c3ce2c50" SourceId="1" SourceUrl="http://odata.netflix.com/v2/Catalog" />
+  </Metadata>
+  <Extensions />
+</ReferenceGroup>

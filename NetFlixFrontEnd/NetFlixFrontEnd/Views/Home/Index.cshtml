@@ -1,8 +1,23 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <h2>@ViewBag.Message</h2>
 <p>
-    Place movies here.
+    @foreach (NetFlixFrontEnd.NetFlixService.Title movie in Model)
+    {
+        <p>
+            <a href="@movie.Url">
+                <img src="@movie.BoxArt.SmallUrl" alt="@movie.ShortName" class="BoxArt" title="@movie.Name" />
+                <br />
+                <span class="MovieTitle">@movie.ShortName</span>
+            </a>
+            <span class="Rating">
+                @Html.Raw("Rating: ") 
+                @for (int i = 0; i < movie.AverageRating; ++i)
+                {
+                    @Html.Raw("*") 
+                }
+            </span>
+        </p>
+    }
 </p>
