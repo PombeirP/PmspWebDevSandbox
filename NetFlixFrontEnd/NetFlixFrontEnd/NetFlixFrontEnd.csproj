@@ -82,6 +82,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\themes\base\images\stars10.gif" />
+    <Content Include="Content\themes\base\images\stars20.gif" />
+    <Content Include="Content\themes\base\images\stars30.gif" />
+    <Content Include="Content\themes\base\images\stars40.gif" />
+    <Content Include="Content\themes\base\images\stars50.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

@@ -331,3 +331,23 @@ div#title {
 .MovieTitle
 {
 }
+
+.Rating
+{
+}
+
+table.MovieTable
+{
+    border: 0px none;
+}
+
+table td.MovieCell
+{
+    border: 0px none;
+    margin: 2em;
+}
+
+img.BoxArt
+{
+    text-align: center;
+}
