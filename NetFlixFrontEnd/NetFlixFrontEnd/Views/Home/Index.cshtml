@@ -8,6 +8,35 @@
 <style type="text/css">
 .slideshow { height: 467px; width: 406px; margin: auto }
 .slideshow div.MovieCell { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+
+.Rating
+{
+	margin-left: 1em
+}
+
+.MovieTitle
+{
+}
+
+div.MovieHost
+{
+	position: relative
+}
+
+.MovieIndex
+{
+	font-size: 144pt;
+	color: #C0B0A0;
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	bottom: 20px;
+	left: -20px;
+}
+
+img.BoxArt
+{
+	text-align: center;
+}
 </style>
 
 <!-- include Cycle plugin -->Index
@@ -23,8 +52,15 @@
 <h2>@ViewBag.Message</h2>
 
 <div class="slideshow">
-	@foreach (Title movie in Model)
-	{
-        @Html.Partial("_MovieTitle", movie)
+	@{
+		int index = 1;
+		foreach (Title movie in Model)
+		{
+			<div class="MovieHost">
+				@Html.Partial("_MovieTitle", movie)
+				<span class="MovieIndex">@index</span>
+			</div>
+			index = index + 1;
+		}
 	}
 </div>
