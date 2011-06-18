@@ -1,25 +1,30 @@
-﻿@using NetFlixFrontEnd.NetFlixService
+﻿@model IQueryable<Title>
+		   
+@using NetFlixFrontEnd.NetFlixService
 @{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Home Page";
 }
+
+<style type="text/css">
+.slideshow { height: 467px; width: 406px; margin: auto }
+.slideshow div.MovieCell { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+</style>
+
+<!-- include Cycle plugin -->Index
+<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.2.74.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.slideshow').cycle({
+			fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		});
+	});
+</script>
 
 <h2>@ViewBag.Message</h2>
 
-<table class="MovieTable">
-    <tr>
-        @foreach (Title movie in (IQueryable<Title>) Model)
-        {
-            <td class="MovieCell">
-                <a href="@movie.Url">
-                    <img src="@movie.BoxArt.MediumUrl" alt="@movie.ShortName" class="BoxArt" title="@movie.Name" />
-                </a>
-                <div style="text-align: center">
-                    <span class="MovieTitle">@movie.ShortName</span>
-                    <div class="Rating">
-                        <img src="@Url.Content("~/Content/themes/base/images/stars" + @movie.AverageRating + "0.gif")"/>
-                    </div>
-                </div>
-            </td>
-        }
-    </tr>
-</table>
+<div class="slideshow">
+	@foreach (Title movie in Model)
+	{
+        @Html.Partial("_MovieTitle", movie)
+	}
+</div>

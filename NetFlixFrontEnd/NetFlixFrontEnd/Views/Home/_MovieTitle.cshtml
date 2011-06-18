@@ -1,0 +1,13 @@
+﻿@model NetFlixFrontEnd.NetFlixService.Title
+
+<div class="MovieCell">
+	<a href="@Model.Url">
+		<img src="@Model.BoxArt.MediumUrl" alt="@Model.ShortName" class="BoxArt" title="@Model.Name" width="284" height="405" />
+	</a>
+	<div style="text-align: center">
+		<span class="MovieTitle">@Model.ShortName</span>
+		<div class="Rating">
+			<img src="@Url.Content("~/Content/themes/base/images/stars" + @Model.AverageRating + "0.gif")"/>
+		</div>
+	</div>
+</div>
