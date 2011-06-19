@@ -42,11 +42,15 @@ img.BoxArt
 <!-- include Cycle plugin -->Index
 <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.2.74.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('.slideshow').cycle({
-			fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-		});
-	});
+    $(document).ready(function () {
+        $('.MovieIndex').hide();
+        $('.slideshow').cycle({
+            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            before: function (currSlideElement, nextSlideElement, options, forwardFlag) {
+                $(nextSlideElement).children('.MovieIndex').delay(2000).fadeIn('slow');
+            }
+        });
+    });
 </script>
 
 <h2>@ViewBag.Message</h2>
